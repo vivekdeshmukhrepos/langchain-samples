@@ -16,7 +16,7 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-st.title('Langchain demo with OpenAI API')
+st.title('Langchain demo with Ollama API')
 input_text = st.text_input("Search the topic you want")
 
 
