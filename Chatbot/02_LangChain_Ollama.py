@@ -1,4 +1,3 @@
-from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.chat_models import ChatOllama
@@ -7,7 +6,6 @@ import streamlit as st
 from dotenv import load_dotenv
 
 load_dotenv()
-
 
 prompt = ChatPromptTemplate.from_messages(
     [
@@ -19,9 +17,8 @@ prompt = ChatPromptTemplate.from_messages(
 st.title('Langchain demo with Ollama API')
 input_text = st.text_input("Search the topic you want")
 
-
-# Ollama Lama2
-llm = ChatOllama(model="gemma3:12b")
+# Ollama Gemma model
+llm = ChatOllama(model="gemma:12b")
 output_parser = StrOutputParser()   
 chain = prompt | llm | output_parser
 
